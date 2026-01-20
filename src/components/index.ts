@@ -1,0 +1,9 @@
+export { Navigation } from "./Navigation";
+export { Hero } from "./Hero";
+export { Services } from "./Services";
+export { Portfolio } from "./Portfolio";
+export { About } from "./About";
+export { Testimonials } from "./Testimonials";
+export { CTA } from "./CTA";
+export { Contact } from "./Contact";
+export { Footer } from "./Footer";
