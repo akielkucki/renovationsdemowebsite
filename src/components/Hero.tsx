@@ -7,7 +7,7 @@ const ScrollIndicator = () => {
       <motion.div
           initial="hidden"
           animate="visible"
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 z-20"
+          className=" flex flex-col items-center gap-6 z-20"
       >
         {/* Text Container with Staggered Blur Reveal */}
         <motion.div
@@ -46,7 +46,7 @@ const ScrollIndicator = () => {
                 ease: "easeInOut",
                 repeatDelay: 0.5,
               }}
-              className="absolute left-0 w-full h-full bg-gradient-to-b from-transparent via-neutral-400 to-transparent opacity-70"
+              className=" h-full bg-gradient-to-b from-transparent via-neutral-400 to-transparent opacity-70"
           />
         </motion.div>
       </motion.div>
@@ -54,7 +54,7 @@ const ScrollIndicator = () => {
 };
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+    <section className="relative min-h-screen flex flex-col w-full items-center justify-center overflow-hidden bg-background">
       {/* Background grid pattern */}
       <div className="absolute inset-0 grid-pattern opacity-50" />
 
