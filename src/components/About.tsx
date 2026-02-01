@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { siteConfig } from "@/config/site.config";
+import CountUp from "react-countup";
 
 export function About() {
   const ref = useRef(null);
@@ -117,7 +118,7 @@ export function About() {
               className="absolute -bottom-8 -left-8 bg-white text-background p-8"
             >
               <div className="font-[family-name:var(--font-space-grotesk)] text-5xl font-bold">
-                {siteConfig.company.projectsCompleted}+
+                <CountUp end={siteConfig.company.projectsCompleted} delay={0.6} />+
               </div>
               <div className="mt-2 font-[family-name:var(--font-inter)] text-sm font-medium text-muted">
                 Projects Delivered

@@ -78,13 +78,13 @@ export const siteConfig = {
     {
       title: "Downtown Loft",
       category: "Kitchen & Bath",
-      image: "/portfolio/loft.jpg",
+      image: "/portfolio/loft.png",
       description: "Industrial-modern conversion with custom finishes.",
     },
     {
       title: "Beverly Hills Estate",
       category: "Full Renovation",
-      image: "/portfolio/beverly.jpg",
+      image: "/portfolio/beverly.png",
       description: "Luxury estate renovation preserving 1920s character.",
     },
     {
@@ -96,7 +96,7 @@ export const siteConfig = {
     {
       title: "Silver Lake Modern",
       category: "Kitchen",
-      image: "/portfolio/silverlake.jpg",
+      image: "/portfolio/silverlake.png",
       description: "Minimalist kitchen with European cabinetry.",
     },
     {

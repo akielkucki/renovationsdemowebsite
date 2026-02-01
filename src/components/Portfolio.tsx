@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { siteConfig } from "@/config/site.config";
+import Image from "next/image";
 
 export function Portfolio() {
   const ref = useRef(null);
@@ -84,15 +85,21 @@ export function Portfolio() {
               className="group relative aspect-[4/5] overflow-hidden cursor-pointer"
             >
               {/* Placeholder gradient background */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-br transition-transform duration-700 ${
-                  index % 3 === 0
-                    ? "from-surface-elevated to-surface"
-                    : index % 3 === 1
-                      ? "from-surface to-background"
-                      : "from-background to-surface-elevated"
-                } ${hoveredIndex === index ? "scale-110" : "scale-100"}`}
-              />
+              {project.image ?
+              <Image src={project.image} alt={`${project.title} cover photo`} width={1920} height={1080} className={`z-0 absolute object-cover min-h-full inset-0 transition-transform duration-700 ${hoveredIndex === index ? "scale-110" : "scale-100"}`}/>
+                  : <div
+                      className={`absolute inset-0 bg-gradient-to-br transition-transform duration-700 ${
+                          index % 3 === 0
+                              ? "from-surface-elevated to-surface"
+                              : index % 3 === 1
+                                  ? "from-surface to-background"
+                                  : "from-background to-surface-elevated"
+                      } ${hoveredIndex === index ? "scale-110" : "scale-100"}`}
+                  />
+
+
+              }
+
 
               {/* Overlay pattern */}
               <div className="absolute inset-0 grid-pattern opacity-30" />
@@ -106,13 +113,20 @@ export function Portfolio() {
 
               {/* Content */}
               <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                <motion.span
-                  className="font-[family-name:var(--font-inter)] text-xs font-medium tracking-[0.2em] text-muted uppercase mb-3"
-                  animate={{ y: hoveredIndex === index ? -8 : 0 }}
-                  transition={{ duration: 0.4 }}
+                <motion.div
+                    className="mb-3 w-fit relative" // Added w-fit and relative
+                    animate={{ y: hoveredIndex === index ? -8 : 0 }}
+                    transition={{ duration: 0.4 }}
                 >
-                  {project.category}
-                </motion.span>
+                  {/* The Text */}
+                  <p className="relative z-10 text-xs font-medium tracking-[0.2em] text-white uppercase text-shadow-black drop-shadow-md drop-shadow-black">
+                    {project.category}
+                  </p>
+
+                  {/* The Bar */}
+                  {/* Adjust 'bg-yellow-500' to your brand color or use bg-muted */}
+                  <div className="absolute -bottom-1 -left-1 w-full h-3 bg-muted/40 -z-0 -rotate-1 origin-bottom-left"></div>
+                </motion.div>
 
                 <motion.h3
                   className="font-[family-name:var(--font-space-grotesk)] text-2xl font-bold text-white mb-2"
